@@ -1,4 +1,6 @@
 <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%#= form_with(model:@tweets, local: true, class: "search-form") do |form| %>
+  <%#これでは↑動かない。indexの@tweetが動いてしまうので、その後の処理が変わってくる。%>
   <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
